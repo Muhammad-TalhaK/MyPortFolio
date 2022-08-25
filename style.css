@@ -111,14 +111,12 @@
     background:none ;
     color: crimson;
 }
-
-/*About Section */
-
-.about{
+/*Similar styling related to title*/
+section{
     font-family: 'Poppins',sans-serif;
     padding: 100px 0;
 }
-.about .title{
+section .title{
     position: relative;
     font-size: 40px;
     font-weight: 500;
@@ -127,7 +125,7 @@
     margin-bottom: 25px;
     padding: 12px;
 }
-.about .title::before{
+section .title::before{
     content: '';
     position: absolute;
     width: 180px;
@@ -137,8 +135,7 @@
     background: #111;
     transform: translateX(-50%);
 }
-.about .title::after{
-    content: 'who i am';
+section .title::after{
     position: absolute;
     left:50%;
     bottom: -21%;
@@ -148,7 +145,13 @@
     padding: 5px;
     transform: translateX(-50%);
 }
-.about .about-content {
+/*About Section */
+
+.about .title::after{
+    content: 'who i am';
+}
+
+.about .about-content,.services .serv-content {
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
@@ -193,6 +196,58 @@
     color: crimson;
 }
 
+/* services section styling */
+.services{
+    background: #111;
+    color: #fff;
+}
+.services .title{
+    color: crimson;
+    padding: 15px;
+}
+.services .title::before{
+    background: #fff;
+}
+.services .title::after{
+    content: 'what i provide';
+    background: #111;
+    color: #fff;
+}
+.services .serv-content .card{
+   width: calc(30%);
+   text-align:center;
+   border-radius: 6px;
+   padding: 20px 25px;
+   cursor: pointer;
+}
+.services .card{
+    background: #222;
+    transition: all 0.3s ease;
+}
+.services .serv-content .card i{
+    font-size: 52px;
+    color: crimson;
+    transition: all 0.3s ease;
+}
+
+.services .serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+.services .serv-content .card .box{
+    transition: all 0.3s ease;
+}
+.services .serv-content .card:hover .box{
+    transform: scale(1.05);
+}
+.services .serv-content .card:hover{
+    background: crimson;
+}
+.services .serv-content .card:hover i{
+    color: #fff;
+}
 /*Responsive media Query*/
 
 @media(max-width:690px){
@@ -211,6 +266,10 @@
     }
     .home .home-content .text-3{
         font-size: 32px;
+    }
+    .services .serv-content .card{
+        width: 100%;
+        margin-bottom:20px;
     }
 
 }
@@ -234,9 +293,13 @@
         font-size: 18px;
         padding: 5px 20px;
     }
+    .services .serv-content .card{
+        width: calc(49%);
+        margin-bottom:20px;
+    }
 }
 
-@media(max-width:947px){
+@media(max-width:1052px){
     .maxwidth{
         padding: 0 50px;
     }
